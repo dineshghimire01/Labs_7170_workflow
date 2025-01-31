@@ -9,3 +9,7 @@ editor_options:
 ---
 
 Welcome to my research website.
+
+[Simulate_Lab1](Simulate_Lab1.html)
+
+[MatrixAlgebra_Lab2](MatrixAlgebra_Lab2.html)
