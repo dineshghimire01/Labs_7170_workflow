@@ -420,10 +420,10 @@ changes </a>
 <div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown is untracked by Git. To know which version of the R
-Markdown file created these results, you’ll want to first commit it to
-the Git repo. If you’re still working on the analysis, you can ignore
-this warning. When you’re finished, you can run
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
 <code>wflow_publish</code> to commit the R Markdown file and build the
 HTML.</p>
 </div>
@@ -516,13 +516,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong27cfb0d">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomdineshghimire01Labs7170workflowtreec02277bffb6d2a2816f6e243afdcc3741c1eec31targetblankc02277ba">
 <span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>Repository version:</strong> 27cfb0d
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/dineshghimire01/Labs_7170_workflow/tree/c02277bffb6d2a2816f6e243afdcc3741c1eec31" target="_blank">c02277b</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong27cfb0d"
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomdineshghimire01Labs7170workflowtreec02277bffb6d2a2816f6e243afdcc3741c1eec31targetblankc02277ba"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -531,7 +533,8 @@ and connecting the code version to the results is critical for
 reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 27cfb0d.
+The results in this page were generated with repository version
+<a href="https://github.com/dineshghimire01/Labs_7170_workflow/tree/c02277bffb6d2a2816f6e243afdcc3741c1eec31" target="_blank">c02277b</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -547,14 +550,11 @@ were generated:
 <pre><code>
 Ignored files:
     Ignored:    .DS_Store
+    Ignored:    .Rhistory
     Ignored:    .Rproj.user/
 
-Untracked files:
-    Untracked:  analysis/MatrixAlgebra_Lab2.Rmd
-    Untracked:  analysis/Simulate_Lab1.Rmd
-
 Unstaged changes:
-    Modified:   analysis/index.Rmd
+    Modified:   analysis/MatrixAlgebra_Lab2.Rmd
 
 </code></pre>
 <p>
@@ -569,10 +569,74 @@ have uncommitted changes.
 <hr>
 </div>
 <div id="versions" class="tab-pane fade">
+
 <p>
-There are no past versions. Publish this analysis with
-<code>wflow_publish()</code> to start tracking its development.
+These are the previous versions of the repository in which changes were
+made to the R Markdown (<code>analysis/MatrixAlgebra_Lab2.Rmd</code>)
+and HTML (<code>docs/MatrixAlgebra_Lab2.html</code>) files. If you’ve
+configured a remote Git repository (see <code>?wflow_git_remote</code>),
+click on the hyperlinks in the table below to view the files as they
+were in that past version.
 </p>
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+File
+</th>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+<th>
+Message
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/dineshghimire01/Labs_7170_workflow/blob/7e62ce9a82d83faff2ffd2a02a56b2abec508506/analysis/MatrixAlgebra_Lab2.Rmd" target="_blank">7e62ce9</a>
+</td>
+<td>
+Dinesh Ghimire
+</td>
+<td>
+2025-01-31
+</td>
+<td>
+All labs will be here
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/dineshghimire01/Labs_7170_workflow/7e62ce9a82d83faff2ffd2a02a56b2abec508506/docs/MatrixAlgebra_Lab2.html" target="_blank">7e62ce9</a>
+</td>
+<td>
+Dinesh Ghimire
+</td>
+<td>
+2025-01-31
+</td>
+<td>
+All labs will be here
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr>
 </div>
 </div>
@@ -1029,7 +1093,27 @@ mean 14 and variance 1</li>
 <pre class="r"><code>y &lt;- as.matrix(rep(0,18))
 y[1:6] = rnorm(n = 6, mean = 3, sd = sqrt(1))
 y[7:12] = rnorm(n = 6, mean = 9, sd = sqrt(1))
-y[13:18] = rnorm(n = 6, mean = 14, sd = sqrt(1))</code></pre>
+y[13:18] = rnorm(n = 6, mean = 14, sd = sqrt(1))
+print(y)</code></pre>
+<pre><code>            [,1]
+ [1,]  2.3941156
+ [2,]  5.0223662
+ [3,]  3.4795168
+ [4,]  0.7205296
+ [5,]  2.1441862
+ [6,]  3.0314607
+ [7,]  9.2036988
+ [8,]  9.3508954
+ [9,]  8.5666122
+[10,]  9.4205318
+[11,]  9.4849859
+[12,] 10.7171627
+[13,] 13.8295097
+[14,] 14.0681870
+[15,] 13.5283275
+[16,] 13.2068637
+[17,] 15.2382691
+[18,] 13.2673914</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Set up the appropriate design matrix <span
 class="math inline">\(\mathbf{X}\)</span> for the simulated data <span
@@ -1069,7 +1153,9 @@ value in <span class="math inline">\(\mathbf{X^t}\mathbf{y}\)</span>
 represent? (2 pts)</li>
 </ol>
 <p>Represent: sum of the response variable (y) for each treatment 1, 2
-and 3 respectively as defined in columns of X.</p>
+and 3 respectively as defined in columns of X.i.e. the first value of
+15.75 is the sum of y for Treatment 1 and so on for 2nd and 3rd
+treatments.</p>
 <pre class="r"><code># X is 18*3 so Xt will be 3*18 and when multiplied with y (18*1) will result in 3*1 matrix
 Xt_y &lt;- t(X) %*% y
 Xt_y</code></pre>
@@ -1083,13 +1169,17 @@ class="math inline">\(\mathbf{X^t}\mathbf{X}\)</span>. What does each
 value in <span class="math inline">\(\mathbf{X^t}\mathbf{X}\)</span>
 represent? (2 pts)</li>
 </ol>
-<p>Answer: - XtX represents the structure of the design matrix X showing
-in principal diagonal, how many observations are in each treatment or
-group. - Non diagonal elements being 0 suggest there are no other factor
+<p>Answer:</p>
+<ul>
+<li><p>XtX represents the structure of the design matrix X where the
+diagonal elements (in the main diagonal) are the number of observations
+in each treatment or group.</p></li>
+<li><p>Non diagonal elements being 0 suggest there are no other factor
 in the equation or there are factors but no common observations with X
-treatment. For eg. if i had treatment (like here) and also location
+treatment. For eg. if i had fertilizer treatment and also location as a
 factor, then other non-diagonal element values will suggest how many y
-values have both location and treatment.</p>
+values have both location and fertilizer treatment.</p></li>
+</ul>
 <pre class="r"><code>Xt_X &lt;- t(X) %*% X
 Xt_X</code></pre>
 <pre><code>     [,1] [,2] [,3]
@@ -1106,9 +1196,15 @@ y_{1j}}{6}\)</span>, <span class="math inline">\(\hat{\beta_{2}} =
 class="math inline">\(\hat{\beta_{3}} = \frac{\sum_{j=1}^{6}
 y_{3j}}{6}\)</span>. (2 pts)</li>
 </ol>
-<p>The formula is : βhat =(X’X)’ X’y These coefficients (beta_hat1,2,3)
-quantify the relationship between the predictor variables (X) and the
-response variable (y)</p>
+<p>The formula is : βhat =(X’X)’ X’y</p>
+<p>These coefficients (beta_hat1,beta_hat2,beta_hat3) are the estimated
+coefficients of the linear model which represent the mean phenotype for
+each treatment group. Eg. 2.62 is the mean phenotype estimated for
+treatment 1.</p>
+</div>
+<div id="solve-for-beta-using-least-squares-estimates-of-beta"
+class="section level3">
+<h3>solve for beta using least squares estimates of beta</h3>
 <pre class="r"><code># the formula is 
 b_hat &lt;- solve(Xt_X) %*% (Xt_y)
 b_hat</code></pre>
@@ -1116,16 +1212,17 @@ b_hat</code></pre>
 [1,]  2.798696
 [2,]  9.457314
 [3,] 13.856425</code></pre>
+</div>
+<div id="another-way-of-calculating-beta-but-more-steps-and-complicated"
+class="section level3">
+<h3>Another way of calculating beta but more steps and complicated</h3>
 <pre class="r"><code>beta_1_hat = Xt_y[1,1]/Xt_X[1,1]
-beta_1_hat</code></pre>
-<pre><code>[1] 2.798696</code></pre>
-<pre class="r"><code>beta_2_hat = Xt_y[2,1]/6
-beta_2_hat</code></pre>
-<pre><code>[1] 9.457314</code></pre>
-<pre class="r"><code>beta_3_hat = Xt_y[3,1]/6
-beta_3_hat</code></pre>
-<pre><code>[1] 13.85642</code></pre>
-<pre class="r"><code>beta &lt;- matrix(0, nrow = 3, ncol = 1)
+#beta_1_hat
+beta_2_hat = Xt_y[2,1]/6
+#beta_2_hat
+beta_3_hat = Xt_y[3,1]/6
+#beta_3_hat
+beta &lt;- matrix(0, nrow = 3, ncol = 1)
 beta[1,1] &lt;- beta_1_hat
 beta[2,1] &lt;- beta_2_hat
 beta[3,1] &lt;- beta_3_hat

@@ -324,7 +324,12 @@ $\mathbf{e} =$
 #### and
 #### $\hat{\beta_{2}} = \frac{\sum_{j=1}^{n_{j}} y_{2j}}{n_{j}}$
 
+
+
+
+
 ## Homework
+
 ### For the homework assignment we will simulate data, contruct the corresponding design matrix, and use matrix algebra to estimate the treatment effects. The simulated dataset will have 18 obersevations from 3 treatments.
 
 1) Allocate a vector $\mathbf{y}$ to store the 18 phenotypes and then simulate observations from each treatment group. (2 pts)
@@ -337,7 +342,7 @@ y <- as.matrix(rep(0,18))
 y[1:6] = rnorm(n = 6, mean = 3, sd = sqrt(1))
 y[7:12] = rnorm(n = 6, mean = 9, sd = sqrt(1))
 y[13:18] = rnorm(n = 6, mean = 14, sd = sqrt(1))
-
+print(y)
 ```
 
 
@@ -357,7 +362,7 @@ print(X)
 
 3) Calculate $\mathbf{X^t}\mathbf{y}$. What does each value in $\mathbf{X^t}\mathbf{y}$ represent? (2 pts)
 
-Represent: sum of the response variable (y) for each treatment 1, 2 and 3 respectively as defined in columns of X.
+Represent: sum of the response variable (y) for each treatment 1, 2 and 3 respectively as defined in columns of X.i.e. the first value of 15.75 is the sum of y for Treatment 1 and so on for 2nd and 3rd treatments.
 
 ```{r}
 # X is 18*3 so Xt will be 3*18 and when multiplied with y (18*1) will result in 3*1 matrix
@@ -369,9 +374,11 @@ Xt_y
 4) Calculate $\mathbf{X^t}\mathbf{X}$. What does each value in $\mathbf{X^t}\mathbf{X}$ represent? (2 pts)
 
 Answer: 
-- XtX represents the structure of the design matrix X showing in principal diagonal, how many observations are in each treatment or group.
+
+- XtX represents the structure of the design matrix X where the diagonal elements (in the main diagonal) are the number of observations in each treatment or group.
+
 - Non diagonal elements being 0 suggest there are no other factor in the equation or there are factors but no common observations with X treatment.
-For eg. if i had treatment (like here) and also location factor, then other non-diagonal element values will suggest how many y values have both location and treatment. 
+For eg. if i had fertilizer treatment and also location as a factor, then other non-diagonal element values will suggest how many y values have both location and fertilizer treatment. 
 
 ```{r }
 Xt_X <- t(X) %*% X
@@ -381,7 +388,11 @@ Xt_X
 5) Using $\mathbf{X^t}\mathbf{X}$ and $\mathbf{X^t}\mathbf{y}$ calculate $\mathbf{\hat{\beta}}$ where $\hat{\beta_{1}} = \frac{\sum_{j=1}^{6} y_{1j}}{6}$, $\hat{\beta_{2}} = \frac{\sum_{j=1}^{6} y_{2j}}{6}$, and $\hat{\beta_{3}} = \frac{\sum_{j=1}^{6} y_{3j}}{6}$. (2 pts)
 
 The formula is : βhat =(X'X)' X'y
-These coefficients (beta_hat1,2,3) quantify the relationship between the predictor variables (X) and the response variable (y)
+
+These coefficients (beta_hat1,beta_hat2,beta_hat3) are the estimated coefficients of the linear model which represent the mean phenotype for each treatment group. Eg. 2.62 is the mean phenotype estimated for treatment 1. 
+
+
+### solve for beta using least squares estimates of beta
 
 ```{r solve for beta using least squares estimates of beta}
 # the formula is 
@@ -389,20 +400,19 @@ b_hat <- solve(Xt_X) %*% (Xt_y)
 b_hat
 ```
 
+### Another way of calculating beta but more steps and complicated
+
 ```{r another way of calculating beta but more steps and complicated}
 beta_1_hat = Xt_y[1,1]/Xt_X[1,1]
-beta_1_hat
+#beta_1_hat
 beta_2_hat = Xt_y[2,1]/6
-beta_2_hat
+#beta_2_hat
 beta_3_hat = Xt_y[3,1]/6
-beta_3_hat
+#beta_3_hat
 beta <- matrix(0, nrow = 3, ncol = 1)
 beta[1,1] <- beta_1_hat
 beta[2,1] <- beta_2_hat
 beta[3,1] <- beta_3_hat
 beta
 ```
-
-
-
 
